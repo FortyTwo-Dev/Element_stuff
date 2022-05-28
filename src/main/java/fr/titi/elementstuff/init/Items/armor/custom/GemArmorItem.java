@@ -29,6 +29,7 @@ public class GemArmorItem extends GeoArmorItem implements IAnimatable {
 
     private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event) {
         LivingEntity livingEntity = event.getExtraDataOfType(LivingEntity.class).get(0);
+        //fonctionne pas
         event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gem_armor.new", true));
         if (livingEntity instanceof ArmorStandEntity) {
             return PlayState.CONTINUE;
