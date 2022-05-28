@@ -7,7 +7,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
-import software.bernie.example.registry.ItemRegistry;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -30,7 +29,7 @@ public class GemArmorItem extends GeoArmorItem implements IAnimatable {
 
     private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event) {
         LivingEntity livingEntity = event.getExtraDataOfType(LivingEntity.class).get(0);
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gem_armor.new", true));
         if (livingEntity instanceof ArmorStandEntity) {
             return PlayState.CONTINUE;
         }else if (livingEntity instanceof PlayerEntity) {
