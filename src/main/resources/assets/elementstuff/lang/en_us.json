@@ -1,0 +1,10 @@
+{
+  "item.elementstuff.flyinggem": "FlyingGem",
+  "item.elementstuff.gem_boots": "Gem Boots",
+  "item.elementstuff.gem_chestplate": "Gem Chestplate",
+  "item.elementstuff.gem_helmet": "Gem Helmet",
+  "item.elementstuff.gem_leggings": "Gem Leggings",
+  "itemGroup.elementstufftab": "ElementStuff",
+  "tooltip.flyinggem.description": "\u00A7eRight Click \u00A77To Fly",
+  "tooltip.flyinggem.hold_shift": "Hold \u00A7eShift \u00A77for More Information"
+}

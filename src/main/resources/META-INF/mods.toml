@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="All rights reserved"
+[[mods]]
+modId="elementstuff"
+version="${file.jarVersion}"
+displayName="Element Stuff"
+logoFile="examplemod.png"
+credits="Thanks for this example mod goes to Java"
+authors="Love, Cheese and small house plants"
+description='''
+This is a long form description of the mod. You can write whatever you want here
+'''
+[[dependencies.elementstuff]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.elementstuff]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
