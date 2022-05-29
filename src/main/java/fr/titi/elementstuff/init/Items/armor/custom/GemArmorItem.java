@@ -7,6 +7,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -19,6 +23,7 @@ import software.bernie.geckolib3.item.GeoArmorItem;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 
 public class GemArmorItem extends GeoArmorItem implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
@@ -56,4 +61,6 @@ public class GemArmorItem extends GeoArmorItem implements IAnimatable {
     public AnimationFactory getFactory() {
         return this.factory;
     }
+
+
 }
