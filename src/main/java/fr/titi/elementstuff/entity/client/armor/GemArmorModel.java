@@ -18,6 +18,6 @@ public class GemArmorModel extends AnimatedGeoModel<GemArmorItem> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(GemArmorItem animatable) {
-        return new ResourceLocation(ElementStuff.MODID, "animations/armor_animation.json");
+        return new ResourceLocation(ElementStuff.MODID, "animations/gem_armor.animation.json");
     }
 }
