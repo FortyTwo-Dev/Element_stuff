@@ -115,9 +115,17 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    maven {
+        url 'https://repo.maven.apache.org/maven2'
+        name 'Maven Central'
+    }
 }
 
 dependencies {
+    implementation 'com.github.t9t.minecraft-rcon-client:minecraft-rcon-client:1.0.0'
+    implementation 'com.squareup.mimecraft:mimecraft:1.1.1'
+    implementation 'net.gmcbm.dependencies:minecraft-timings:1.0.4'
+
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
