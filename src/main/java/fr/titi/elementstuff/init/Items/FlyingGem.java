@@ -33,7 +33,7 @@ public class FlyingGem extends Item implements IAnimatable {
     public FlyingGem(Properties properties) {
         super(properties);
     }
-    //Fonctionne pas.!!!
+    //Fonctionne pas.!!!:
     @Override
     public void initializeClient(Consumer<IItemRenderProperties> consumer) {
         super.initializeClient(consumer);
