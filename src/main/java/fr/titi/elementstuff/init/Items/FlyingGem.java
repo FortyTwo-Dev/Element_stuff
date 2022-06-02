@@ -7,6 +7,8 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
@@ -28,6 +30,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 
 public class FlyingGem extends Item implements IAnimatable, ISyncable {
@@ -40,7 +43,7 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
     }
     public int util = 100;
     public int test = 0;
-    public int Anime = 0;
+    public int anime = 0;
     public int chrono = 0;
     Timer timer = new Timer();
 
@@ -63,9 +66,12 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
     @Override
     public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         if (!player.isSpectator() && !player.isCreative()) {
-            test++;
-            Anime++;
-            player.getCooldowns().addCooldown(this, 5*20);
+            if (!player.abilities.flying){
+                test++;
+                anime++;
+                player.getCooldowns().addCooldown(this, 2*20);
+            }
+
         }
         if (test == 2){
             --util;
@@ -91,14 +97,12 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
         }
         if (!player.isSpectator() && !player.isCreative()) {
             if (util >= 1 && chrono == 0) {
-                //System.out.println(util);
                 if (!player.abilities.flying) {
+                    player.jumpFromGround();
                     player.abilities.flying = true;
                     player.abilities.setFlyingSpeed(fly);
                     player.ignoreExplosion();
                     player.stopFallFlying();
-                } else {
-                    player.abilities.flying = false;
                 }
             }
         }
@@ -110,10 +114,10 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
         data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
     }
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (Anime > 0) {
+        if (anime > 0) {
             event.getController().markNeedsReload();
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.flying_gem.new", false));
-            Anime = 0;
+            anime = 0;
         }
         return PlayState.CONTINUE;
     }
@@ -125,7 +129,7 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
 
     @Override
     public void onAnimationSync(int id, int state) {
-        if (Anime > 0) {
+        if (anime > 0) {
             final AnimationController<?> controller = GeckoLibUtil.getControllerForID(this.factory, id, "controller");
             if (controller.getAnimationState() == AnimationState.Stopped) {
                 controller.markNeedsReload();
