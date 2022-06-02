@@ -15,8 +15,7 @@ public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ElementStuff.MODID);
 
-    public static final RegistryObject<Item> FLYINGGEM = ITEMS.register("flyinggem", () ->
-            new FlyingGem(new Item.Properties().stacksTo(1).tab(ElementStuffTab.TAB)));
+    public static final RegistryObject<FlyingGem> FLYINGGEM = ITEMS.register("flying_gem", () -> new FlyingGem());
 
     public static final RegistryObject<ArmorItem> GEM_HELMET = ITEMS.register("gem_helmet", () ->
             new GemArmorItem(ModArmorMaterial.GEM, EquipmentSlotType.HEAD, new Item.Properties().stacksTo(1).tab(ElementStuffTab.TAB).fireResistant()));
