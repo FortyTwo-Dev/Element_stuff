@@ -7,6 +7,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
@@ -29,9 +30,10 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
 public class FlyingGem extends Item implements IAnimatable, ISyncable {
     public AnimationFactory factory = new AnimationFactory(this);
-    float fly = 0.05f;
+    float fly = 0.07f;
 
     public FlyingGem() {
         super(new Item.Properties().stacksTo(1).tab(ElementStuffTab.TAB).setISTER(() -> FlyingGemRenderer::new));
@@ -57,7 +59,6 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
 
         super.appendHoverText(stack, world, textComponents, tooltipFlag);
     }
-
 
     @Override
     public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
@@ -98,6 +99,13 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
             if (util >= 1 && chrono == 0) {
                 if (!player.abilities.flying) {
                     player.jumpFromGround();
+                    for(int i = 0; i < 360*2; i++) {
+                        if(i % 20 == 0) {
+                            world.addParticle(ParticleTypes.FLAME,
+                                    player.getX() + 0.0d, player.getY() + 0, player.getZ() + 0.0d,
+                                    Math.cos(i) * 0.15d, 0.05d, Math.sin(i) * 0.15d);
+                        }
+                    }
                     player.abilities.flying = true;
                     player.abilities.setFlyingSpeed(fly);
                     player.ignoreExplosion();
