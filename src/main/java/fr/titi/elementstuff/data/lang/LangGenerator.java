@@ -21,6 +21,7 @@ public class LangGenerator extends LanguageProvider {
     private void Item(PrefixHelper helper) {
 
         helper.add(ModItems.FLYINGGEM.get(), "FlyingGem");
+        helper.add(ModItems.GEM_SWORD.get(), "Gem Sword");
         helper.add(ModItems.GEM_HELMET.get(), "Gem Helmet");
         helper.add(ModItems.GEM_CHESTPLATE.get(), "Gem Chestplate");
         helper.add(ModItems.GEM_LEGGINGS.get(), "Gem Leggings");

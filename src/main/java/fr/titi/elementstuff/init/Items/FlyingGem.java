@@ -4,6 +4,7 @@ import fr.titi.elementstuff.init.Items.client.FlyingGemRenderer;
 import fr.titi.elementstuff.utils.ElementStuffTab;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
