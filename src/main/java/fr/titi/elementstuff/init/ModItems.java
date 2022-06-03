@@ -3,7 +3,9 @@ package fr.titi.elementstuff.init;
 import fr.titi.elementstuff.ElementStuff;
 import fr.titi.elementstuff.init.Items.FlyingGem;
 import fr.titi.elementstuff.init.Items.armor.custom.GemArmorItem;
+import fr.titi.elementstuff.init.Items.custom.GemSword;
 import fr.titi.elementstuff.utils.ElementStuffTab;
+import fr.titi.elementstuff.utils.GemItemsTiers;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -15,8 +17,10 @@ public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ElementStuff.MODID);
 
+    //flying gem
     public static final RegistryObject<FlyingGem> FLYINGGEM = ITEMS.register("flying_gem", () -> new FlyingGem());
 
+    //armor gem
     public static final RegistryObject<ArmorItem> GEM_HELMET = ITEMS.register("gem_helmet", () ->
             new GemArmorItem(ModArmorMaterial.GEM, EquipmentSlotType.HEAD, new Item.Properties().stacksTo(1).tab(ElementStuffTab.TAB).fireResistant()));
 
@@ -28,5 +32,8 @@ public class ModItems {
 
     public static final RegistryObject<ArmorItem> GEM_BOOTS = ITEMS.register("gem_boots", () ->
             new GemArmorItem(ModArmorMaterial.GEM, EquipmentSlotType.FEET, new Item.Properties().stacksTo(1).tab(ElementStuffTab.TAB).fireResistant()));
+
+    //gem sword
+    public static final RegistryObject<GemSword> GEM_SWORD = ITEMS.register("gem_sword", () -> new GemSword());
 
 }

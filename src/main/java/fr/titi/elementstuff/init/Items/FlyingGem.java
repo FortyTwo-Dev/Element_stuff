@@ -13,7 +13,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -23,7 +22,6 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.network.GeckoLibNetwork;
 import software.bernie.geckolib3.network.ISyncable;
-import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -136,12 +134,6 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
 
     @Override
     public void onAnimationSync(int id, int state) {
-        if (anime > 0) {
-            final AnimationController<?> controller = GeckoLibUtil.getControllerForID(this.factory, id, "controller");
-            if (controller.getAnimationState() == AnimationState.Stopped) {
-                controller.markNeedsReload();
-                controller.setAnimation(new AnimationBuilder().addAnimation("animation.flyinggem.new", false));
-            }
-        }
+
     }
 }

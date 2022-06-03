@@ -1,0 +1,43 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.gem_blade.new": {
+			"loop": true,
+			"animation_length": 1.04,
+			"anim_time_update": "0",
+			"blend_weight": "1",
+			"start_delay": "0",
+			"bones": {
+				"gem": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.04": {
+							"vector": [0, -180, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.gem_blade_fast.new": {
+			"loop": true,
+			"animation_length": 0.24,
+			"anim_time_update": "0",
+			"blend_weight": "1",
+			"start_delay": "0",
+			"bones": {
+				"gem": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.24": {
+							"vector": [0, -180, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}
