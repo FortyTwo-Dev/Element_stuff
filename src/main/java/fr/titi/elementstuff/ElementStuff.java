@@ -31,6 +31,6 @@ public class ElementStuff {
 
     private void clientSetup(FMLClientSetupEvent e){
         GeoArmorRenderer.registerArmorRenderer(GemArmorItem.class, new GemArmorRenderer());
-        }
+    }
 
 }

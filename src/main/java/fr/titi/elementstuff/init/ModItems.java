@@ -3,9 +3,9 @@ package fr.titi.elementstuff.init;
 import fr.titi.elementstuff.ElementStuff;
 import fr.titi.elementstuff.init.Items.FlyingGem;
 import fr.titi.elementstuff.init.Items.armor.custom.GemArmorItem;
+import fr.titi.elementstuff.init.Items.custom.GemPickaxe;
 import fr.titi.elementstuff.init.Items.custom.GemSword;
 import fr.titi.elementstuff.utils.ElementStuffTab;
-import fr.titi.elementstuff.utils.GemItemsTiers;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -35,5 +35,8 @@ public class ModItems {
 
     //gem sword
     public static final RegistryObject<GemSword> GEM_SWORD = ITEMS.register("gem_sword", () -> new GemSword());
+
+    //gem pickaxe
+    public static final RegistryObject<GemPickaxe> GEM_PICKAXE = ITEMS.register("gem_pickaxe", () -> new GemPickaxe());
 
 }

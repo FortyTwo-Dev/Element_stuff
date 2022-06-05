@@ -68,9 +68,7 @@ public class FlyingGem extends Item implements IAnimatable, ISyncable {
                 if (util > 1){
                     player.getCooldowns().addCooldown(this, 2*20);
                 }
-
             }
-
         }
         if (test == 2){
             --util;
